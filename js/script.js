@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const teamData = [
       {
         name: "Nurlan Osmanov",
-        role: "Founder & CEO",
+        role: "Team Lead",
         image: "./images/profile/nurlan.png",
         social: {
           linkedin: "https://linkedin.com/",
