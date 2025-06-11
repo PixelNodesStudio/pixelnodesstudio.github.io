@@ -35,26 +35,44 @@ body {
   position: fixed;
   width: 10px;
   height: 10px;
-  background-color: var(--primary-color);
+  background-color: #4464e0;
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
   z-index: 9999;
-  transition: transform 0.1s ease;
-  mix-blend-mode: difference;
+  transition: width 0.2s, height 0.2s, opacity 0.2s;
 }
 
 .cursor-follower {
   position: fixed;
   width: 30px;
   height: 30px;
-  border: 2px solid var(--primary-color);
+  border: 2px solid rgba(68, 100, 224, 0.5);
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
   z-index: 9998;
-  transition: all 0.3s ease;
-  mix-blend-mode: difference;
+  transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s, transform 0.15s ease-out;
+}
+
+/* Cursor states for interactive elements */
+.cursor.active {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(68, 100, 224, 0.5);
+}
+
+.cursor-follower.active {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(68, 100, 224, 0.1);
+  border-color: rgba(68, 100, 224, 0.3);
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+/* Hide default cursor on interactive elements */
+a, button, .filter-btn, .menu-toggle, .lang-switcher {
+  cursor: none;
 }
 
 /* Container */
@@ -176,7 +194,7 @@ body {
   align-items: center;
   color: var(--light-text);
   overflow: hidden;
-  background-image: url('../images/legend_of_the_simurg_xsolla.png');
+  background-image: url('../images/simurg_library_header.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

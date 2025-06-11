@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         title: "Legend of the Simurg",
         description: "An epic adventure game based on ancient legends, where players embark on a quest to find the mythical Simurg bird.",
-        image: "images/legend_of_the_simurg_xsolla.png",
+        image: "images/simurg_library_header.png",
         platforms: ["pc", "console"],
         link: "https://store.steampowered.com/app/3796670/Simurg_Efsanesi/"
       },
