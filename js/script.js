@@ -205,6 +205,13 @@ document.addEventListener('DOMContentLoaded', () => {
         image: "images/towerOfSeveb.png",
         platforms: ["pc","mobile"],
         link: "https://pixelnodesstudio.itch.io/tower-of-seven"
+      },
+      {
+        title: "Snake On The Line",
+        description: "Snake On The Line is a horror game where you must escape from a mysterious labyrinth by solving puzzles and avoiding a deadly threat. But you're not alone... the snake from the classic Nokia mobile game!",
+        image: "images/snakeOnTheLine.png",
+        platforms: ["pc"],
+        link: "https://pixelnodesstudio.itch.io/snake-on-the-line"
       }
       // {
       //   title: "Epic of Gorgud",
