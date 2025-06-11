@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PixelNodes</title>
+  <link rel="stylesheet" href="css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+  
+  <header class="site-header">
+    <div class="container">
+      <nav class="main-nav">
+        <div class="logo">
+          <a href="#home">
+            <img src="images/pixelnodes.png" alt="PixelNodes" class="logo-img">
+            </a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link" data-en="Home" data-az="Ana səhifə">Home</a></li>
+          <li><a href="#games" class="nav-link" data-en="Games" data-az="Oyunlar">Games</a></li>
+          <li><a href="#team" class="nav-link" data-en="Team" data-az="Komanda">Team</a></li>
+          <li><a href="#contact" class="nav-link" data-en="Contact" data-az="Əlaqə">Contact</a></li>
+          <li class="lang-switcher" onclick="toggleLanguage()"><span>EN / AZ</span></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="particles-container" id="particles-js"></div>
+    <div class="container">
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="animate-on-scroll">
+            <span class="line">Crafting Epic</span>
+            <span class="line highlight">Gaming Experiences</span>
+          </h1>
+          <p class="animate-on-scroll" id="hero-text">We tell stories through games. Inspired by culture, powered by imagination.</p>
+          <div class="hero-buttons animate-on-scroll">
+            <a href="#games" class="btn primary-btn" id="explore-btn" data-en="Explore Our Games" data-az="Oyunları Kəşf Et">Explore Our Games</a>
+            <a href="#contact" class="btn secondary-btn" id="contact-btn" data-en="Get in Touch" data-az="Əlaqə Saxla">Get in Touch</a>
+          </div>
+        </div>
+        <div class="hero-image animate-on-scroll">
+          <div class="floating-element" data-speed="0.3">
+            <img src="images/legend_of_the_simurg_xsolla.png" alt="Legend of the Simurg">
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="scroll-down">
+      <span class="mouse">
+        <span class="wheel"></span>
+      </span>
+      <span class="arrow">
+        <span></span>
+        <span></span>
+      </span>
+    </div>
+  </section>
+
+  <section id="games" class="games-section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">Portfolio</span>
+        <h2 data-en="Our Games" data-az="Oyunlarımız">Our Games</h2>
+        <p>Innovative games that push boundaries and create memorable experiences</p>
+      </div>
+      <div class="games-filter animate-on-scroll">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="pc">PC</button>
+        <button class="filter-btn" data-filter="console">Console</button>
+      </div>
+      <div class="games-grid">
+        <!-- Games will be loaded by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <section id="team" class="team-section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">People</span>
+        <h2 data-en="Meet the Team" data-az="Komandamızla tanış olun">Meet the Team</h2>
+        <p>Creative minds and talented individuals who bring our visions to life</p>
+      </div>
+      <div class="team-grid">
+        <!-- Team members will be loaded by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-info animate-on-scroll">
+          <div class="section-header left-align">
+            <span class="section-tag">Connect</span>
+            <h2 data-en="Get in Touch" data-az="Əlaqə">Get in Touch</h2>
+            <p>Have a question or want to work with us? Send us a message!</p>
+          </div>
+          
+          <div class="contact-cards">
+            <div class="contact-card">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h3 data-en="Email" data-az="Elektron Poçt">Email</h3>
+                <a href="mailto:pixelnodesofficial@gmail.com">pixelnodesofficial@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="contact-card">
+              <i class="fab fa-linkedin"></i>
+              <div>
+                <h3 data-en="LinkedIn" data-az="LinkedIn">LinkedIn</h3>
+                <a href="https://www.linkedin.com/company/pixelnodes/" target="_blank">linkedin.com/company/pixelnodes</a>
+              </div>
+            </div>
+            
+            <div class="contact-card">
+              <i class="fas fa-globe"></i>
+              <div>
+                <h3 data-en="Website" data-az="Vebsayt">Website</h3>
+                <a href="https://pixelnodes" target="_blank">bura doldurulmalidi</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="social-media">
+            <h3 data-en="Follow Us" data-az="Bizi İzləyin">Follow Us</h3>
+            <div class="social-icons">
+              <a href="https://www.instagram.com/pixelnodes.official" target="_blank" aria-label="Instagram" class="social-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="HELEKI YOXDU" target="_blank" aria-label="Facebook" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="HELEKI YOXDU" target="_blank" aria-label="Twitter" class="social-icon">
+                <i class="fab fa-discord"></i>
+              <a href="HELEKI YOXDU" target="_blank" aria-label="Reddit" class="social-icon">
+                <i class="fab fa-reddit-alien"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form animate-on-scroll">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn primary-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/pixelnodes.png" alt="PixelNodes">
+          <p>Creating games that matter</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-nav">
+            <h3>Navigation</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#games">Games</a></li>
+              <li><a href="#team">Team</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-legal">
+            <h3>Legal</h3>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Cookies Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 DastanGames. <span data-en="All rights reserved." data-az="Bütün hüquqlar qorunur.">All rights reserved.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
