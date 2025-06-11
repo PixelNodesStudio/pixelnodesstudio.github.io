@@ -198,6 +198,13 @@ document.addEventListener('DOMContentLoaded', () => {
         image: "images/error404.png",
         platforms: ["pc", "console"],
         link: "https://pixelnodesstudio.itch.io/error-404-still-working"
+      },
+      {
+        title: "Tower of Seven",
+        description: "This is a casual puzzle game where the goal is to build a tower by creating the sum of 7 using cards numbered between 1 and 6.",
+        image: "images/towerOfSeveb.png",
+        platforms: ["pc","mobile"],
+        link: "https://pixelnodesstudio.itch.io/tower-of-seven"
       }
       // {
       //   title: "Epic of Gorgud",
@@ -307,6 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
         role: "Senior Developer",
         image: "./images/profile/amiba.png",
         social: {
+          behance: "https://www.behance.net/w9rm0000",
           linkedin: "https://www.linkedin.com/in/amina-islam-232338273?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         }
       },
