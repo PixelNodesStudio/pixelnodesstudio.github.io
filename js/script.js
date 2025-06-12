@@ -1,50 +1,117 @@
 // let currentLang = localStorage.getItem('language') || 'en';
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Handle preloader
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    // Remove no-js class from body
+    document.body.classList.remove('no-js');
+    
+    // Hide preloader after content loads
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        preloader.classList.add('preloader-inactive');
+      }, 500);
+    });
+  }
+
   // Immediately activate animations in the hero section
   const heroAnimatedElements = document.querySelectorAll('.hero .animate-on-scroll');
   heroAnimatedElements.forEach(el => {
     el.classList.add('active');
   });
   
-  // Custom cursor
+  // Enhanced custom cursor
   const cursor = document.querySelector('.cursor');
   const cursorFollower = document.querySelector('.cursor-follower');
   
   if(cursor && cursorFollower) {
+    // Variables for smoother animation
+    let mouseX = 0;
+    let mouseY = 0;
+    let cursorX = 0;
+    let cursorY = 0;
+    let followerX = 0;
+    let followerY = 0;
+    let speed = 0.1; // Cursor speed
+    let followerSpeed = 0.05; // Follower speed
+    
     document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-      
-      setTimeout(() => {
-        cursorFollower.style.left = e.clientX + 'px';
-        cursorFollower.style.top = e.clientY + 'px';
-      }, 100);
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      // Show cursor elements when mouse moves
+      cursor.style.opacity = 1;
+      cursorFollower.style.opacity = 1;
+    });
+    
+    // Hide cursor when mouse leaves the window
+    document.addEventListener('mouseleave', () => {
+      cursor.style.opacity = 0;
+      cursorFollower.style.opacity = 0;
     });
     
     document.addEventListener('mousedown', () => {
-      cursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
-      cursorFollower.style.transform = 'translate(-50%, -50%) scale(0.8)';
+      cursor.classList.add('active');
+      cursorFollower.classList.add('active');
     });
     
     document.addEventListener('mouseup', () => {
-      cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-      cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
+      cursor.classList.remove('active');
+      cursorFollower.classList.remove('active');
     });
     
-    // Special effect on links
-    const links = document.querySelectorAll('a, button, .lang-switcher');
-    links.forEach(link => {
-      link.addEventListener('mouseenter', () => {
-        cursorFollower.style.transform = 'translate(-50%, -50%) scale(1.5)';
-        cursor.style.opacity = '0.5';
+    // Special effect on interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .filter-btn, .menu-toggle, .lang-switcher');
+    interactiveElements.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.classList.add('active');
+        cursorFollower.classList.add('active');
       });
       
-      link.addEventListener('mouseleave', () => {
-        cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
-        cursor.style.opacity = '1';
+      el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('active');
+        cursorFollower.classList.remove('active');
+      });
+      
+      // Add slight magnetic effect on hover
+      el.addEventListener('mousemove', (e) => {
+        const rect = el.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const distance = Math.sqrt(Math.pow(mouseX - centerX, 2) + Math.pow(mouseY - centerY, 2));
+        
+        // Only apply magnetic effect when close to the center
+        if (distance < rect.width) {
+          const pull = 0.15; // Strength of magnetic pull
+          mouseX += (centerX - mouseX) * pull;
+          mouseY += (centerY - mouseY) * pull;
+        }
       });
     });
+    
+    // Animation loop for smooth cursor movement
+    function animateCursor() {
+      // Calculate cursor position with easing
+      cursorX += (mouseX - cursorX) * speed;
+      cursorY += (mouseY - cursorY) * speed;
+      
+      // Calculate follower position with different easing (more delay)
+      followerX += (mouseX - followerX) * followerSpeed;
+      followerY += (mouseY - followerY) * followerSpeed;
+      
+      // Apply positions
+      cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+      cursorFollower.style.transform = `translate(${followerX}px, ${followerY}px)`;
+      
+      requestAnimationFrame(animateCursor);
+    }
+    
+    // Start animation
+    animateCursor();
+    
+    // Hide cursor initially on page load
+    cursor.style.opacity = 0;
+    cursorFollower.style.opacity = 0;
   }
 
   // Initialize particles.js
