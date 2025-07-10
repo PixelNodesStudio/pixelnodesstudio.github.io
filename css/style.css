@@ -30,121 +30,8 @@ body {
   overflow-x: hidden;
 }
 
-/* Preloader */
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999;
-  background: #2c2c2c;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
-.preloader-logo {
-  height: calc(3.2vw + 78px);
-  z-index: 120;
-}
 
-@media screen and (max-width: 374px) {
-  .preloader-logo {
-    height: 90px;
-  }
-}
-
-@media screen and (min-width: 1921px) {
-  .preloader-logo {
-    height: 140px;
-  }
-}
-
-.preloader-animation {
-  position: absolute;
-  width: calc(3.2vw + 77px);
-  height: calc(3.2vw + 77px);
-  border: 5px solid #4464e0;
-  border-radius: 50%;
-  opacity: 0;
-  z-index: 110;
-  animation: preloaderAnimation 1.5s ease-out 0s infinite;
-}
-
-@keyframes preloaderAnimation {
-  0% {
-    transform: scale(0.1);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1.2);
-    opacity: 0;
-  }
-}
-
-.preloader.preloader-inactive {
-  animation: preloaderInactive 1.5s 1.5s forwards;
-}
-
-@keyframes preloaderInactive {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    pointer-events: none;
-    z-index: -100;
-  }
-}
-
-.no-js .preloader {
-  animation: preloaderInactive 1s 1s forwards;
-}
-
-/* Enhanced Cursor Styles */
-.cursor {
-  position: fixed;
-  width: 10px;
-  height: 10px;
-  background-color: #4464e0;
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 9997;
-  transition: width 0.2s, height 0.2s, opacity 0.2s, transform 0.15s;
-}
-
-.cursor-follower {
-  position: fixed;
-  width: 30px;
-  height: 30px;
-  border: 2px solid rgba(68, 100, 224, 0.5);
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 9996;
-  transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s, transform 0.15s ease-out;
-}
-
-/* Cursor states for interactive elements */
-.cursor.active {
-  width: 20px;
-  height: 20px;
-  background-color: rgba(68, 100, 224, 0.5);
-}
-
-.cursor-follower.active {
-  width: 40px;
-  height: 40px;
-  background-color: rgba(68, 100, 224, 0.1);
-  border-color: rgba(68, 100, 224, 0.3);
-  transform: translate(-50%, -50%) scale(0.8);
-}
 
 /* Hide default cursor on interactive elements */
 a, button, .filter-btn, .menu-toggle, .lang-switcher {
@@ -158,8 +45,8 @@ a, button, .filter-btn, .menu-toggle, .lang-switcher {
   margin: 0 auto;
   padding: 0 15px;
 }
-
-/* Header & Navigation */
+/* 
+header */
 .site-header {
   position: fixed;
   top: 0;
@@ -270,7 +157,7 @@ a, button, .filter-btn, .menu-toggle, .lang-switcher {
   align-items: center;
   color: var(--light-text);
   overflow: hidden;
-  background-image: url('../images/simurg_library_header.png');
+  background-image: url('../images/main_capsule.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -288,14 +175,7 @@ a, button, .filter-btn, .menu-toggle, .lang-switcher {
   z-index: 1;
 }
 
-.particles-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-}
+
 
 .hero-content {
   position: relative;
@@ -547,11 +427,9 @@ section {
   overflow: hidden;
   box-shadow: var(--box-shadow);
   transition: var(--transition);
-}
-
-.game-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--hover-shadow);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .game-card-img {
@@ -562,6 +440,9 @@ section {
 
 .game-card-content {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
 
 .game-card-title {
@@ -582,6 +463,7 @@ section {
   align-items: center;
   border-top: 1px solid var(--border-color);
   padding-top: 15px;
+  margin-top: auto;
 }
 
 .game-platform {
@@ -603,6 +485,7 @@ section {
   align-items: center;
   gap: 5px;
   transition: var(--transition);
+  cursor: pointer !important;
 }
 
 .game-link:hover {

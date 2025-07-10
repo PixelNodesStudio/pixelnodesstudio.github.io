@@ -1,19 +1,7 @@
 // let currentLang = localStorage.getItem('language') || 'en';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Handle preloader
-  const preloader = document.getElementById('preloader');
-  if (preloader) {
-    // Remove no-js class from body
-    document.body.classList.remove('no-js');
-    
-    // Hide preloader after content loads
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        preloader.classList.add('preloader-inactive');
-      }, 500);
-    });
-  }
+  
 
   // Immediately activate animations in the hero section
   const heroAnimatedElements = document.querySelectorAll('.hero .animate-on-scroll');
@@ -23,170 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Enhanced custom cursor
   const cursor = document.querySelector('.cursor');
-  const cursorFollower = document.querySelector('.cursor-follower');
   
-  if(cursor && cursorFollower) {
-    // Variables for smoother animation
-    let mouseX = 0;
-    let mouseY = 0;
-    let cursorX = 0;
-    let cursorY = 0;
-    let followerX = 0;
-    let followerY = 0;
-    let speed = 0.1; // Cursor speed
-    let followerSpeed = 0.05; // Follower speed
-    
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      // Show cursor elements when mouse moves
-      cursor.style.opacity = 1;
-      cursorFollower.style.opacity = 1;
-    });
-    
-    // Hide cursor when mouse leaves the window
-    document.addEventListener('mouseleave', () => {
-      cursor.style.opacity = 0;
-      cursorFollower.style.opacity = 0;
-    });
-    
-    document.addEventListener('mousedown', () => {
-      cursor.classList.add('active');
-      cursorFollower.classList.add('active');
-    });
-    
-    document.addEventListener('mouseup', () => {
-      cursor.classList.remove('active');
-      cursorFollower.classList.remove('active');
-    });
-    
-    // Special effect on interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, .filter-btn, .menu-toggle, .lang-switcher');
-    interactiveElements.forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        cursor.classList.add('active');
-        cursorFollower.classList.add('active');
-      });
-      
-      el.addEventListener('mouseleave', () => {
-        cursor.classList.remove('active');
-        cursorFollower.classList.remove('active');
-      });
-      
-      // Add slight magnetic effect on hover
-      el.addEventListener('mousemove', (e) => {
-        const rect = el.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        const distance = Math.sqrt(Math.pow(mouseX - centerX, 2) + Math.pow(mouseY - centerY, 2));
-        
-        // Only apply magnetic effect when close to the center
-        if (distance < rect.width) {
-          const pull = 0.15; // Strength of magnetic pull
-          mouseX += (centerX - mouseX) * pull;
-          mouseY += (centerY - mouseY) * pull;
-        }
-      });
-    });
-    
-    // Animation loop for smooth cursor movement
-    function animateCursor() {
-      // Calculate cursor position with easing
-      cursorX += (mouseX - cursorX) * speed;
-      cursorY += (mouseY - cursorY) * speed;
-      
-      // Calculate follower position with different easing (more delay)
-      followerX += (mouseX - followerX) * followerSpeed;
-      followerY += (mouseY - followerY) * followerSpeed;
-      
-      // Apply positions
-      cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
-      cursorFollower.style.transform = `translate(${followerX}px, ${followerY}px)`;
-      
-      requestAnimationFrame(animateCursor);
-    }
-    
-    // Start animation
-    animateCursor();
-    
-    // Hide cursor initially on page load
-    cursor.style.opacity = 0;
-    cursorFollower.style.opacity = 0;
-  }
-
-  // Initialize particles.js
-  if(document.getElementById('particles-js')) {
-    if(typeof particlesJS !== 'undefined') {
-      particlesJS('particles-js', {
-        particles: {
-          number: {
-            value: 80,
-            density: {
-              enable: true,
-              value_area: 800
-            }
-          },
-          color: {
-            value: "#6e44ff"
-          },
-          shape: {
-            type: "circle",
-          },
-          opacity: {
-            value: 0.5,
-            random: true,
-          },
-          size: {
-            value: 3,
-            random: true,
-          },
-          line_linked: {
-            enable: true,
-            distance: 150,
-            color: "#6e44ff",
-            opacity: 0.4,
-            width: 1
-          },
-          move: {
-            enable: true,
-            speed: 2,
-            direction: "none",
-            random: false,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-          }
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: {
-              enable: true,
-              mode: "grab"
-            },
-            onclick: {
-              enable: true,
-              mode: "push"
-            },
-            resize: true
-          },
-          modes: {
-            grab: {
-              distance: 140,
-              line_linked: {
-                opacity: 1
-              }
-            },
-            push: {
-              particles_nb: 4
-            }
-          }
-        },
-        retina_detect: true
-      });
-    }
-  }
-
   // Mobile Menu Toggle
   const mobileMenu = document.getElementById('mobile-menu');
   const navMenu = document.querySelector('.nav-menu');
@@ -248,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         title: "Legend of the Simurg",
         description: "An epic adventure game based on ancient legends, where players embark on a quest to find the mythical Simurg bird.",
-        image: "images/simurg_library_header.png",
+        image: "images/main_capsule.png",
         platforms: ["pc", "console"],
         link: "https://store.steampowered.com/app/3796670/Simurg_Efsanesi/"
       },
@@ -256,14 +81,14 @@ document.addEventListener('DOMContentLoaded', () => {
         title: "Rhythm of The Rain",
         description: "This game is about Shaman Ritual. This ritual is to call the sky god, which is Kök Tengri. In the ritual, some shapes (like ancient Turkish symbols) are seen in rhythm and our aim is to shape the character body like these symbols.",
         image: "images/rhytmQardas.png",
-        platforms: ["pc", "console"],
+        platforms: ["pc"],
         link: "https://pixelnodesstudio.itch.io/rhythm-of-the-rain"
       },
       {
         title: "Error 404: Still working",
         description: "Json, is having a tough day at work. His boss has tasked him with sending important files, but his biggest enemy is the computer’s glitches and bugs.",
         image: "images/error404.png",
-        platforms: ["pc", "console"],
+        platforms: ["pc"],
         link: "https://pixelnodesstudio.itch.io/error-404-still-working"
       },
       {
@@ -279,6 +104,13 @@ document.addEventListener('DOMContentLoaded', () => {
         image: "images/snakeOnTheLine.png",
         platforms: ["pc"],
         link: "https://pixelnodesstudio.itch.io/snake-on-the-line"
+      },
+      {
+        title: "Truth or Dare",
+        description: "Truth and Dare is a word game that you can have fun with your friends. The main idea here is to spin the bottle and after the bottle stops, the person who matches the front of bottle chooses Truth or Dare.",
+        image: "images/truthOrDare.jpeg",
+        platforms: ["mobile"],
+        link: "https://play.google.com/store/apps/details?id=com.smthGames.DC&pli=1"
       }
       // {
       //   title: "Epic of Gorgud",
@@ -313,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let platformsHTML = '';
       game.platforms.forEach(platform => {
         platformsHTML += platformIcons[platform] || '';
-      });
+      }); 
       
       const gameCard = document.createElement('div');
       gameCard.className = 'game-card animate-on-scroll';
@@ -327,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="game-platform">
               ${platformsHTML}
             </div>
-            <a href="${game.link}" class="game-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            <a href="${game.link}" class="game-link" style="cursor: pointer;">Learn more <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       `;
