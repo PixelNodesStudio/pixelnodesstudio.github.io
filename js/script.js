@@ -202,8 +202,8 @@ document.addEventListener('DOMContentLoaded', () => {
         role: "Game Designer",
         image: "./images/profile/nurlan.png",
         social: {
-          linkedin: "https://linkedin.com/",
-          github: "https://github.com/"
+          linkedin: "https://www.linkedin.com/in/nurlan-osmanov-30a8a7227/",
+          github: "https://github.https://github.com/NurlanOsmanov//"
         }
       },
       {
