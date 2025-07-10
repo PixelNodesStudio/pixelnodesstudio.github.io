@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       {
         name: "Riad Veliyev",
-        role: "Lead Designer",
+        role: "Developer",
         image: "./images/profile/riad.png",
         social: {
           github: "https://github.com/Roronoa1331",
@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       {
         name: "Amina Islam",
-        role: "Senior Developer",
+        role: "2D Artist",
         image: "./images/profile/amiba.png",
         social: {
           behance: "https://www.behance.net/w9rm0000",
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       {
         name: "Leyla Haqverdi",
-        role: "Sound Engineer",
+        role: "2D Artist",
         image: "./images/profile/leyla.png",
         social: {
           behance: "https://www.behance.net/w9rm0000"
