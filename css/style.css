@@ -505,7 +505,7 @@ section {
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
+  gap: 40px;
 }
 
 .team-card {
@@ -524,7 +524,7 @@ section {
 
 .team-img {
   width: 100%;  /* Make image full width of the card */
-  height: 180px;  /* Set fixed height for the image portion */
+  height: 240px;  /* Set fixed height for the image portion */
   border-radius: 0;  /* Remove border radius from image */
   object-fit: cover;
   background-color: white;  
