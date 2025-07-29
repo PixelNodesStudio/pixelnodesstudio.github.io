@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         name: "Riad Veliyev",
         role: "Developer",
-        image: "./images/profile/riad.png",
+        image: "./images/profile/roroma.png",
         social: {
           github: "https://github.com/Roronoa1331",
           linkedin: "https://www.linkedin.com/in/riad-veliyev-8ba04814b/"
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         name: "Amina Islam",
         role: "2D Artist",
-        image: "./images/profile/amiba.png",
+        image: "./images/profile/ami.png",
         social: {
           behance: "https://www.behance.net/w9rm0000",
           linkedin: "https://www.linkedin.com/in/amina-islam-232338273?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         name: "Leyla Haqverdi",
         role: "2D Artist",
-        image: "./images/profile/leyla.png",
+        image: "./images/profile/worm.png",
         social: {
           behance: "https://www.behance.net/w9rm0000"
         }
@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         name: "Qazanfar Seferov",
         role: "Developer",
-        image: "./images/profile/nurlan.png",
+        image: "./images/profile/qezenfer.png",
         social: {
           linkedin: "https://www.linkedin.com/in/qezenfer-seferov-628072207/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           github: "https://github.com/Qezenfer10"
