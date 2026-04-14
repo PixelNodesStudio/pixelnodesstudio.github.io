@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const teamData = [
       {
         name: "Nurlan Osmanov",
-        role: "Game Designer",
+        role: "Team Lead",
         image: "./images/profile/nurlan.png",
         social: {
           linkedin: "https://www.linkedin.com/in/nurlan-osmanov-30a8a7227/",
@@ -207,12 +207,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       },
       {
-        name: "Riad Veliyev",
-        role: "Developer",
-        image: "./images/profile/roroma.png",
+        name: "Tahir Yagubov",
+        role: "Game Designer",
+        image: "./images/profile/nurlan.png",
         social: {
-          github: "https://github.com/Roronoa1331",
-          linkedin: "https://www.linkedin.com/in/riad-veliyev-8ba04814b/"
+          linkedin: "https://www.linkedin.com/in/tahir-yaqubov-7914b8295/",
         }
       },
       {
@@ -220,16 +219,26 @@ document.addEventListener('DOMContentLoaded', () => {
         role: "2D Artist",
         image: "./images/profile/ami.png",
         social: {
-          behance: "https://www.behance.net/w9rm0000",
+          artstation: "https://www.artstation.com/ammonia",
           linkedin: "https://www.linkedin.com/in/amina-islam-232338273?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         }
       },
       {
-        name: "Leyla Haqverdi",
+        name: "Nijat Aliyev",
         role: "2D Artist",
-        image: "./images/profile/worm.png",
+        image: "./images/profile/nurlan.png",
         social: {
-          behance: "https://www.behance.net/w9rm0000"
+          linkedin: "hhttps://www.linkedin.com/in/nicat-aliyev-6a091a243/",
+          instagram: "https://www.instagram.com/havensnicho/"
+        }
+      },
+      {
+        name: "Rashid Huseynov",
+        role: "Developer",
+        image: "./images/profile/nurlan.png",
+        social: {
+          linkedin: "https://www.linkedin.com/in/rashid-huseynov-aa37a52a3/",
+          github: "https://github.com/AquaIsUseless"
         }
       },
       {
@@ -240,6 +249,15 @@ document.addEventListener('DOMContentLoaded', () => {
           linkedin: "https://www.linkedin.com/in/qezenfer-seferov-628072207/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           github: "https://github.com/Qezenfer10"
         
+        }
+      },
+      {
+        name: "Riad Veliyev",
+        role: "Developer",
+        image: "./images/profile/roroma.png",
+        social: {
+          github: "https://github.com/Roronoa1331",
+          linkedin: "https://www.linkedin.com/in/riad-veliyev-8ba04814b/"
         }
       }
     ];
@@ -262,6 +280,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if(member.social.behance) {
           socialHTML += `<a href="${member.social.behance}" target="_blank"><i class="fab fa-behance"></i></a>`;
+        }
+        if(member.social.artstation) {
+          socialHTML += `<a href="${member.social.artstation}" target="_blank"><i class="fab fa-artstation"></i></a>`;
+        }
+        if(member.social.instagram) {
+          socialHTML += `<a href="${member.social.instagram}" target="_blank"><i class="fab fa-instagram"></i></a>`;
         }
       }
       
