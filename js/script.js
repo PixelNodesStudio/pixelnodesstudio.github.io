@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         name: "Tahir Yagubov",
         role: "Game Designer",
-        image: "./images/profile/nurlan.png",
+        image: "./images/profile/tahir.png",
         social: {
           linkedin: "https://www.linkedin.com/in/tahir-yaqubov-7914b8295/",
         }
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         name: "Nijat Aliyev",
         role: "2D Artist",
-        image: "./images/profile/nurlan.png",
+        image: "./images/profile/nicat.png",
         social: {
           linkedin: "hhttps://www.linkedin.com/in/nicat-aliyev-6a091a243/",
           instagram: "https://www.instagram.com/havensnicho/"
@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         name: "Rashid Huseynov",
         role: "Developer",
-        image: "./images/profile/nurlan.png",
+        image: "./images/profile/rashid.png",
         social: {
           linkedin: "https://www.linkedin.com/in/rashid-huseynov-aa37a52a3/",
           github: "https://github.com/AquaIsUseless"
